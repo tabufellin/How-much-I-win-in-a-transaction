@@ -1,0 +1,27 @@
+#little program to calculate income in trading taking in count the money that we have to pay to the broker
+#Sebastian Gonzalez
+from math import floor
+
+
+comision=float(6.95)
+dinero=float(0)
+dineroSobrante=float(0)
+entrada=float(0)
+salida=float(0)
+cantidadAcciones=float(0)
+ganancias=float(0)
+
+entrada=float(input ("¿Cuanto vale la acción?"))
+dinero=float(input("¿Cuanto dinero tiene?"))
+salida=float(input ("¿En qué precio espera salir?"))
+
+cantidadAcciones=floor(dinero/entrada)
+dineroSobrante=dinero-cantidadAcciones*entrada
+dineroSobrante=round(dineroSobrante, 4)
+ganancias=(cantidadAcciones * (salida - entrada)) - comision*2
+ganancias=round(ganancias, 4)
+
+print ("La cantidad de acciones que vas a comprar seran "+str(cantidadAcciones))
+print("Su vuelto sera: " + str(dineroSobrante))
+print ("Sus ganancias esperadas seran de: " + str(ganancias))
+
